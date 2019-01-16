@@ -68,3 +68,18 @@ for (let key in stuff) {
 
 const eat = {meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']};
 console.log(eat.meals[3]);
+
+const person1 = {name:'joe', jobTitle:'CSR', boss: 'sam' };
+const person2 = {name:'bob', jobTitle:'CTO', boss: 'sam' };
+const person3 = {name:'sam', jobTitle:'CEO' };
+
+const directory = [person1, person2, person3];
+for(let i in directory){
+  if ('boss' in directory[i]) {
+    console.log(`${directory[i].jobTitle} ${directory[i].name} reports to ${directory[i].boss}.`);
+  }
+  else {
+    console.log(`${directory[i].jobTitle} ${directory[i].name} doesn't report to anybody.`);
+  }
+}
+
