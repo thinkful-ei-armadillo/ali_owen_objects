@@ -83,3 +83,34 @@ for(let i in directory){
   }
 }
 
+const encrypt = {
+  a: 2,
+  b: 3,
+  c: 4,
+  d: 5
+}
+
+function decode(word) {
+  for (let key in encrypt) {
+    if (word.charAt(0) === key) {
+      word = word.charAt([encrypt[key]] - 1);
+      return word;
+      }
+     }
+   return ' ';
+}
+
+function decodeWords(message) {
+
+let newMessage = "";
+let encode = message.split(' ');
+for (let i in encode) {
+newMessage += decode(encode[i]);
+}
+return newMessage;
+}
+
+console.log(decodeWords('craft block argon meter bells brown croon droop'));
+
+
+
