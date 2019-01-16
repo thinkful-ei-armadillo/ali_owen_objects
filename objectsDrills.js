@@ -78,10 +78,16 @@ return items[entry];
 }
 
 
+function validateKeys(object, expectedKeys) {
 
-
-
-
+  const objectkeys = Object.keys(object);
+  for (key in objectkeys) {
+    if (!expectedKeys.includes(key)) {
+      return false;
+    }
+  }
+  return true;
+}
 
 
 
