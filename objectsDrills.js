@@ -68,6 +68,27 @@ students[index].status = 'In Summer school';
 return students;
 }
 
+function findById(items, idNum) {
+
+for (entry in items) {
+if (items[entry].id === idNum) {
+return items[entry];
+    }  
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
