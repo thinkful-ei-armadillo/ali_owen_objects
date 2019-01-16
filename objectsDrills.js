@@ -60,4 +60,15 @@ return studentReport;
 }
 
 
+function enrollInSummerSchool(students) {
+
+for (index in students) {
+students[index].status = 'In Summer school';
+  }
+return students;
+}
+
+
+
+
 
