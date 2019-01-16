@@ -141,12 +141,6 @@ console.log(LOTR);
 
 console.log(LOTR.find((char)=> char.nickname === 'aragorn').describe());
 
-const hobbits = LOTR.filter()
-
-
-
-
-
-
-
+const hobbits = LOTR.filter((char)=> char.race === 'Hobbit');
+console.log(hobbits);
 
