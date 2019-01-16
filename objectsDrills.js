@@ -136,11 +136,12 @@ LOTR.push(createCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 2, 1)
 LOTR.push(createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2));
 LOTR.push(createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 6, 8));
 LOTR.push(createCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5));
-
+LOTR.push(createCharacter('Arwen Undomiel', 'arwen', 'Half-Elf', 'Rivendell', 9, 4));
 console.log(LOTR);
-  
 
+console.log(LOTR.find((char)=> char.nickname === 'aragorn').describe());
 
+const hobbits = LOTR.filter()
 
 
 
