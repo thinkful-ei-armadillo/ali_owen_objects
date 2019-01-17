@@ -1,55 +1,54 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 'use strict';
+function createMyObject() {
 
+  return { 
+    foo: 'bar',
+    answerToUniverse: 42,
+    'olly olly': 'oxen free',
+    sayHello: function() {
+      return 'hello';
+    }
+  };
+}
 
-// function createMyObject() {
+function updateObject(obj) {
+  // if (typeOf obj === 'object') {
+  obj.foo = 'foo';
+  obj.bar = 'bar';
+  obj.bizz = 'bizz';
+  obj.bang = 'bang';
+  return obj;
+}
 
-//   return { 
-//     foo: 'bar',
-//     answerToUniverse: 42,
-//     'olly olly': 'oxen free',
-//     sayHello: function() {
-//       return 'hello';
-//     }
-//   };
-// }
+function personMaker() {
+  var person = {
+    firstName: 'Paul',
+    lastName: 'Jones',
+    // replace `null` with a function that uses self reference to return
+    // full name
+    fullName: function () { //why doesnt an anonymous function work here?
+      return `${this.firstName} ${this.lastName}`;
+    }
+    // fullName: () => `${this.firstName} ${this.lastName}`
+  };
+  return person;
+}
 
-// function updateObject(obj) {
-//   // if (typeOf obj === 'object') {
-//   obj.foo = 'foo';
-//   obj.bar = 'bar';
-//   obj.bizz = 'bizz';
-//   obj.bang = 'bang';
-//   return obj;
-// }
+const sampleObj = {
+  foo: 'foo',
+  bar: 'bar',
+  bizz: 'bizz',
+  bang: 'bang',
+};
 
-// function personMaker() {
-//   var person = {
-//     firstName: 'Paul',
-//     lastName: 'Jones',
-//     // replace `null` with a function that uses self reference to return
-//     // full name
-//     fullName: function () { //why doesnt an anonymous function work here?
-//     	return `${this.firstName} ${this.lastName}`;
-//     }
-//     // fullName: () => `${this.firstName} ${this.lastName}`
-//   };
-//   return person;
-// }
-
-// const sampleObj = {
-//   foo: 'foo',
-//   bar: 'bar',
-//   bizz: 'bizz',
-//   bang: 'bang',
-// };
-
-// function keyDeleter(obj) {
-//   // your code here
-//   delete obj.foo;
-//   delete obj.bar;
-//   return obj;
-// }
+function keyDeleter(obj) {
+  // your code here
+  delete obj.foo;
+  delete obj.bar;
+  return obj;
+}
 
 const loaf = {
   flour: 300,
@@ -88,26 +87,26 @@ const encrypt = {
   b: 3,
   c: 4,
   d: 5
-}
+};
 
 function decode(word) {
   for (let key in encrypt) {
     if (word.charAt(0) === key) {
       word = word.charAt([encrypt[key]] - 1);
       return word;
-      }
-     }
-   return ' ';
+    }
+  }
+  return ' ';
 }
 
 function decodeWords(message) {
 
-let newMessage = "";
-let encode = message.split(' ');
-for (let i in encode) {
-newMessage += decode(encode[i]);
-}
-return newMessage;
+  let newMessage = '';
+  let encode = message.split(' ');
+  for (let i in encode) {
+    newMessage += decode(encode[i]);
+  }
+  return newMessage;
 }
 
 console.log(decodeWords('craft block argon meter bells brown croon droop'));
@@ -115,19 +114,19 @@ console.log(decodeWords('craft block argon meter bells brown croon droop'));
 
 function createCharacter(name, nickname, race, origin, attack, defense) {
 
-return {
-  name,
-  nickname,
-  race,
-  origin,
-  attack,
-  defense,
-  describe: function() { return `${name} is a ${race} from ${origin}.` },
-  evaluateFight: function(character) { 
-  let x = character.defense > this.attack ? 0 : this.attack - character.defense;
-  let y = this.defense > character.attack ? 0 : character.attack - this.defense;
-  return `Your opponent takes ${x} damage and you receive ${y} damage`;},
-  }
+  return {
+    name,
+    nickname,
+    race,
+    origin,
+    attack,
+    defense,
+    describe: function() { return `${name} is a ${race} from ${origin}.`; },
+    evaluateFight: function(character) { 
+      let x = character.defense > this.attack ? 0 : this.attack - character.defense;
+      let y = this.defense > character.attack ? 0 : character.attack - this.defense;
+      return `Your opponent takes ${x} damage and you receive ${y} damage`;},
+  };
 }
 
 const LOTR = [];
